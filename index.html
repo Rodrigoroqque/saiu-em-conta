@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saiu em Conta | Achado bom é o que sai em conta</title>
-<meta name="description" content="Grupo grátis de ofertas no WhatsApp. Antes de postar, a gente confere o histórico do preço: só entra o que caiu de verdade. No máximo 8 achados por dia.">
-<meta property="og:title" content="Saiu em Conta">
-<meta property="og:description" content="Achado bom é o que sai em conta. Ofertas conferidas contra o histórico, grátis no WhatsApp.">
+<title>Saiu em Conta | Grupo de ofertas grátis no WhatsApp</title>
+<meta name="description" content="Grupo grátis de ofertas no WhatsApp com achados da Amazon, Shopee e Mercado Livre. A gente confere o preço antes de postar. No máximo 8 achados por dia.">
+<meta property="og:title" content="Saiu em Conta · grupo de ofertas no WhatsApp">
+<meta property="og:description" content="Achados da Amazon, Shopee e Mercado Livre, com o preço conferido, direto no seu WhatsApp. Grátis.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://saiuemconta.com.br/">
 <meta property="og:image" content="https://saiuemconta.com.br/og.png">
@@ -30,57 +30,73 @@
   .logo { width:170px; }
   .selo { white-space:nowrap; font:700 12px "JetBrains Mono"; letter-spacing:.08em; border:1px solid rgba(255,246,230,.35); padding:7px 11px; border-radius:99px; }
 
-  .heroi { padding:40px 0 90px; display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
-  h1 { font:900 clamp(44px, 6.4vw, 76px)/.96 Archivo; font-variation-settings:"wdth" 74; letter-spacing:-.01em; }
-  h1 .mao { color:var(--c); font-size:.52em; display:block; margin-top:12px; letter-spacing:0; }
-  .sub { margin-top:22px; font-size:20px; max-width:32ch; color:#E6F5EC; }
-  .ctas { margin-top:30px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-  .btn { display:inline-flex; align-items:center; gap:10px; padding:17px 26px; border-radius:14px; font-weight:700; text-decoration:none; font-size:17px; transition:transform .15s; }
+  .heroi { padding:34px 0 80px; display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
+  .chamada { font:700 12px "JetBrains Mono"; letter-spacing:.16em; color:var(--m); margin-bottom:16px; }
+  h1 { font:900 clamp(42px, 6vw, 72px)/.96 Archivo; font-variation-settings:"wdth" 74; letter-spacing:-.01em; }
+  h1 .mao { color:var(--c); font-size:.5em; display:block; margin-top:12px; letter-spacing:0; }
+  .sub { margin-top:22px; font-size:20px; max-width:34ch; color:#E6F5EC; }
+  .lojas { margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
+  .lojas span { font:700 13px "Inter Tight"; background:rgba(255,246,230,.12); border:1px solid rgba(255,246,230,.25); padding:6px 12px; border-radius:99px; }
+  .ctas { margin-top:28px; }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:18px 28px; border-radius:14px; font-weight:700; text-decoration:none; font-size:18px; transition:transform .15s; }
   .btn:active { transform:scale(.97); }
-  .btn-zap { background:var(--c); color:var(--v); }
-  .btn-zap svg { color:var(--zap); }
-  .btn-tg { border:1px solid rgba(255,246,230,.4); color:var(--c); }
-  .miudo { margin-top:14px; font-size:13px; color:#BFE3CF; }
+  .btn-zap { background:var(--zap); color:#073B24; box-shadow:0 10px 24px rgba(0,0,0,.18); }
+  .btn-claro { background:var(--c); color:var(--v); }
+  .btn-claro svg { color:var(--zap); }
+  .miudo { margin-top:14px; font-size:14px; color:#BFE3CF; }
 
-  .cupom { background:var(--c); color:var(--g); font-family:"JetBrains Mono"; padding:34px 30px 46px; position:relative; clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),97.5% 100%,95% calc(100% - 14px),92.5% 100%,90% calc(100% - 14px),87.5% 100%,85% calc(100% - 14px),82.5% 100%,80% calc(100% - 14px),77.5% 100%,75% calc(100% - 14px),72.5% 100%,70% calc(100% - 14px),67.5% 100%,65% calc(100% - 14px),62.5% 100%,60% calc(100% - 14px),57.5% 100%,55% calc(100% - 14px),52.5% 100%,50% calc(100% - 14px),47.5% 100%,45% calc(100% - 14px),42.5% 100%,40% calc(100% - 14px),37.5% 100%,35% calc(100% - 14px),32.5% 100%,30% calc(100% - 14px),27.5% 100%,25% calc(100% - 14px),22.5% 100%,20% calc(100% - 14px),17.5% 100%,15% calc(100% - 14px),12.5% 100%,10% calc(100% - 14px),7.5% 100%,5% calc(100% - 14px),2.5% 100%,0 calc(100% - 14px)); }
-  .sombra { filter:drop-shadow(0 26px 30px rgba(0,0,0,.28)); }
-  .heroi .sombra { transform:rotate(-2deg); max-width:410px; margin-left:auto; }
-  .cab { text-align:center; font-weight:800; font-size:13px; letter-spacing:.3em; color:var(--v); }
-  .sub2 { text-align:center; font-size:11.5px; opacity:.6; margin-top:4px; }
-  .tr { border-top:2px dashed var(--g); opacity:.22; margin:18px 0; }
-  .item { font:700 22px/1.15 "Inter Tight"; }
-  .lin { display:flex; align-items:baseline; gap:10px; font-weight:700; font-size:13.5px; margin-top:12px; }
-  .lin .p { flex:1; border-bottom:2px dotted var(--g); opacity:.3; transform:translateY(-4px); }
-  .lin .v { position:relative; white-space:nowrap; }
-  .lin.hoje { margin-top:22px; }
-  .lin.hoje .v { font-size:38px; font-weight:800; color:var(--v); letter-spacing:-1px; }
-  .circulo { position:absolute; left:-18px; top:-8px; width:calc(100% + 36px); height:calc(100% + 16px); pointer-events:none; }
-  .lin.eco { color:var(--v); margin-top:18px; }
-  .af { text-align:center; font-size:11px; opacity:.6; }
+  /* celular com o grupo */
+  /* iPhone 18: moldura fina por igual, Dynamic Island, cantos bem arredondados */
+  .iphone { position:relative; width:330px; max-width:100%; margin-left:auto; padding:9px; border-radius:58px;
+    background:linear-gradient(145deg,#4B4F55,#1C1E21 30%,#2C2F33 70%,#5A5E64); box-shadow:0 0 0 1.5px #6B7076 inset, 0 34px 70px rgba(0,0,0,.4); transform:rotate(2deg); }
+  .iphone .bt { position:absolute; width:4px; background:#3A3D42; border-radius:2px; }
+  .bt-acao { left:-3px; top:112px; height:30px; } .bt-vol1 { left:-3px; top:162px; height:54px; } .bt-vol2 { left:-3px; top:226px; height:54px; }
+  .bt-power { right:-3px; top:190px; height:86px; } .bt-cam { right:-3px; top:330px; height:52px; border-radius:3px; }
+  .tela { position:relative; border-radius:49px; overflow:hidden; background:#EFE7DD; border:2px solid #050505; }
+  .status { height:48px; display:flex; align-items:center; justify-content:space-between; padding:6px 26px 0 34px; background:#F7F7F7; color:#000; font:600 15px -apple-system, "SF Pro Text", "Inter Tight", sans-serif; }
+  .ilha { position:absolute; left:50%; top:11px; transform:translateX(-50%); width:96px; height:28px; background:#000; border-radius:20px; }
+  .ic { display:flex; gap:5px; align-items:center; }
+  .ic i { display:block; background:#000; }
+  .sinal { width:17px; height:11px; clip-path:polygon(0 100%,25% 100%,25% 70%,0 70%,0 100%,35% 100%,35% 45%,60% 45%,60% 100%,70% 100%,70% 20%,95% 20%,95% 100%); }
+  .wifi { width:15px; height:11px; border-radius:15px 15px 0 0; clip-path:polygon(50% 100%,0 25%,20% 0,80% 0,100% 25%); }
+  .ic .bat { width:24px; height:11.5px; border-radius:3.5px; background:transparent; border:1.3px solid #000; padding:1.5px; }
+  .ic .bat::after { content:""; display:block; width:80%; height:100%; background:#000; border-radius:1.5px; }
+  .cel-topo { background:#F7F7F7; color:#000; display:flex; gap:9px; align-items:center; padding:4px 12px 10px; border-bottom:1px solid #DDD; }
+  .cel-topo .volta { color:#0A84FF; font-size:30px; line-height:1; margin-top:-4px; }
+  .cel-topo .ava { width:34px; height:34px; border-radius:50%; background:var(--v); color:var(--c); display:grid; place-items:center; font-weight:900; flex:none; }
+  .cel-topo b { display:block; font-size:15px; } .cel-topo small { font-size:11.5px; color:#777; }
+  .cel-chat { padding:12px 10px 26px; display:grid; gap:10px; height:500px; overflow:hidden; align-content:start; }
+  .home { position:absolute; left:50%; bottom:8px; transform:translateX(-50%); width:120px; height:5px; border-radius:3px; background:#111; }
+  .bolha { background:#fff; color:#111; border-radius:10px; padding:5px 5px 6px; font-size:13px; line-height:1.4; box-shadow:0 1px 1px rgba(0,0,0,.12); }
+  .bolha img { width:100%; height:150px; object-fit:contain; background:#fff; border-radius:7px; display:block; margin-bottom:5px; }
+  .bolha p { padding:0 5px; } .bolha s { color:#777; } .bolha .lk { color:#0A66C2; }
+  .bolha .af { font-size:11px; color:#666; display:flex; justify-content:space-between; gap:8px; margin-top:3px; }
 
   section { padding:84px 0; }
   section + section { border-top:1px solid #EADFCB; }
   .rot { font:700 12px "JetBrains Mono"; letter-spacing:.16em; text-transform:uppercase; color:var(--v); }
-  h2 { font:900 clamp(36px, 5.6vw, 58px)/.98 Archivo; font-variation-settings:"wdth" 74; margin:12px 0 34px; max-width:18ch; }
+  h2 { font:900 clamp(34px, 5.4vw, 56px)/.98 Archivo; font-variation-settings:"wdth" 74; margin:12px 0 30px; max-width:20ch; }
   h2 .mao { font-size:.7em; display:block; }
+
+  /* vitrine */
+  .vitrine { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .card { display:flex; flex-direction:column; gap:4px; background:#fff; border:1px solid #EADFCB; border-radius:16px; padding:14px 16px 16px; text-decoration:none; transition:transform .15s, box-shadow .15s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 12px 24px rgba(0,0,0,.08); }
+  .foto { height:170px; display:grid; place-items:center; margin-bottom:8px; }
+  .foto img { max-width:100%; max-height:170px; object-fit:contain; }
+  .loja { font:700 11px "JetBrains Mono"; letter-spacing:.1em; text-transform:uppercase; color:var(--v); }
+  .nome { font:700 16px/1.25 "Inter Tight"; min-height:2.5em; }
+  .de { color:#8A8F8B; text-decoration:line-through; font-size:14px; margin-top:6px; }
+  .por { font:800 24px "Archivo"; color:var(--g); }
+  .por em { font:800 14px "JetBrains Mono"; font-style:normal; color:#fff; background:var(--v); padding:3px 7px; border-radius:6px; vertical-align:middle; }
+  .nota { margin-top:18px; font-size:14px; color:#6F766F; }
+  .meio { margin-top:30px; text-align:center; }
 
   .passos { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
   .passo { background:#fff; border:1px solid #EADFCB; border-radius:16px; padding:28px 24px; }
   .passo .n { font:800 13px "JetBrains Mono"; color:var(--v); }
   .passo h3 { font:800 23px/1.1 Archivo; font-variation-settings:"wdth" 80; margin:12px 0 8px; }
   .passo p { color:#4A524D; font-size:16px; }
-
-  .faixa { background:var(--m); }
-  .compara { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
-  .compara h3 { font:800 14px "JetBrains Mono"; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; color:var(--v); }
-  .compara .fraco .cupom { opacity:.75; }
-  .risca { text-decoration:line-through; }
-  .nao { font-weight:800; }
-
-  .regras { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-  .regra { padding:22px; background:#fff; border:1px solid #EADFCB; border-radius:16px; }
-  .regra b { display:block; font:900 34px Archivo; font-variation-settings:"wdth" 70; color:var(--v); }
-  .regra span { color:#4A524D; font-size:15px; }
 
   details { border-bottom:1px solid #EADFCB; padding:20px 0; }
   summary { cursor:pointer; font-weight:700; font-size:18px; list-style:none; display:flex; justify-content:space-between; gap:20px; }
@@ -90,17 +106,25 @@
 
   .final { background:var(--v); color:var(--c); text-align:center; padding:96px 0; }
   .final .simb { width:110px; margin:0 auto 18px; }
-  .final h2 { margin:0 auto 26px; }
+  .final h2 { margin:0 auto 12px; }
+  .final p { margin:0 auto 28px; color:#E6F5EC; max-width:40ch; }
   footer { padding:34px 0 60px; color:#6F766F; font-size:13px; }
 
-  @media (max-width: 860px) {
-    .heroi { grid-template-columns:1fr; padding-top:16px; gap:56px; }
-    .heroi .sombra { margin:0 auto; }
-    .passos, .compara { grid-template-columns:1fr; }
-    .regras { grid-template-columns:1fr 1fr; }
+  @media (max-width: 900px) {
+    .heroi { grid-template-columns:1fr; padding-top:12px; gap:44px; }
+    .iphone { margin:0 auto; transform:none; }
+    .cel-chat { height:430px; }
+    .vitrine { grid-template-columns:1fr 1fr; gap:12px; }
+    .vitrine .card:nth-child(9) { display:none; }
+    .passos { grid-template-columns:1fr; }
     .selo { font-size:10px; padding:6px 9px; }
     .logo { width:130px; }
-    section { padding:64px 0; }
+    section { padding:60px 0; }
+    .btn { width:100%; justify-content:center; }
+  }
+  @media (max-width: 480px) {
+    .foto { height:120px; } .foto img { max-height:120px; }
+    .card { padding:10px 10px 12px; } .nome { font-size:14px; } .por { font-size:19px; }
   }
 </style>
 </head>
@@ -124,88 +148,58 @@
   </header>
   <div class="heroi">
     <div>
-      <h1>Ofertas que saem em conta de verdade.<span class="mao">achado bom é o que sai em conta ✓</span></h1>
-      <p class="sub">Achados das lojas que você já conhece, direto no seu WhatsApp. Antes de postar, a gente confere o histórico do preço: só entra o que caiu de verdade.</p>
+      <div class="chamada">GRUPO DE OFERTAS NO WHATSAPP</div>
+      <h1>Os melhores achados do dia no seu WhatsApp.<span class="mao">achado bom é o que sai em conta ✓</span></h1>
+      <p class="sub">A gente garimpa as lojas o dia inteiro, confere se o preço caiu mesmo e manda só o que vale a pena. Você só abre o grupo.</p>
+      <div class="lojas"><span>Amazon</span><span>Shopee</span><span>Mercado Livre</span></div>
       <div class="ctas">
-        <a class="btn btn-zap" id="entrar" href="#" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.67.99 3.27 1.59 5.39 1.59 5.45 0 9.89-4.43 9.89-9.88a9.88 9.88 0 0 0-9.88-9.89c-5.46 0-9.89 4.43-9.89 9.88 0 2.23.65 3.9 1.75 5.65l-1 3.65 3.74-.99zm11.39-5.46c-.07-.12-.27-.2-.57-.35-.29-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41z"/></svg>
-          Entrar no grupo grátis
-        </a>
-        <a class="btn btn-tg" id="telegram" href="#" rel="noopener">Prefiro Telegram</a>
+        <a class="btn btn-zap" href="https://api.saiuemconta.com.br/entrar?de=site" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.67.99 3.27 1.59 5.39 1.59 5.45 0 9.89-4.43 9.89-9.88a9.88 9.88 0 0 0-9.88-9.89c-5.46 0-9.89 4.43-9.89 9.88 0 2.23.65 3.9 1.75 5.65l-1 3.65 3.74-.99zm11.39-5.46c-.07-.12-.27-.2-.57-.35-.29-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41z"/></svg> Entrar no grupo grátis</a>
       </div>
       <p class="miudo">Só os admins postam. Silencie se quiser. Sai quando quiser.</p>
     </div>
-    <div class="sombra">
-      <div class="cupom" aria-label="Exemplo de achado">
-        <div class="cab">SAIU EM CONTA</div>
-        <div class="sub2">achado nº 0001 · conta conferida</div>
-        <div class="tr"></div>
-        <div class="item">Air Fryer 5 Litros Digital</div>
-        <div class="tr"></div>
-        <div class="lin"><span>COSTUMA SAIR POR</span><span class="p"></span><span class="v">R$ 499,00</span></div>
-        <div class="lin hoje"><span>HOJE</span><span class="p"></span><span class="v">R$ 199<svg class="circulo" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M30 92 C 22 40, 140 18, 230 22 C 330 26, 390 60, 370 104 C 350 146, 200 150, 110 140 C 50 133, 18 110, 40 70" fill="none" stroke="#2D4BFF" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></div>
-        <div class="lin eco"><span>VOCÊ ECONOMIZA</span><span class="p"></span><span class="v">R$ 300,00</span></div>
-        <div class="tr"></div>
-        <div class="af">link de afiliado · você paga o mesmo</div>
-      </div>
-    </div>
+    <div class="iphone"><span class="bt bt-acao"></span><span class="bt bt-vol1"></span><span class="bt bt-vol2"></span><span class="bt bt-power"></span><span class="bt bt-cam"></span><div class="tela"><div class="status"><b>9:41</b><span class="ilha"></span><span class="ic"><i class="sinal"></i><i class="wifi"></i><i class="bat"></i></span></div><div class="cel-topo"><span class="volta">‹</span><span class="ava">✓</span><div><b>Saiu em Conta #1</b><small>Só admins podem enviar mensagens</small></div></div><div class="cel-chat"><div class="bolha"><img src="img/airfryer-britania-3l.jpg" alt=""><p><b>Air Fryer Britânia Bella Cuccina 3L</b></p><p>De <s>R$ 369,90</s> por <b>R$ 199,90</b> (46% off)</p><p class="lk">👉 shopee.com.br/…</p><p class="af"><i>Shopee · link de afiliado, você paga o mesmo</i><span>09:12</span></p></div><div class="bolha"><img src="img/nespresso-essenza-mini.jpg" alt=""><p><b>Cafeteira Nespresso Essenza Mini</b></p><p>De <s>R$ 829,00</s> por <b>R$ 479,00</b> (42% off)</p><p class="lk">👉 amazon.com.br/…</p><p class="af"><i>Amazon · link de afiliado, você paga o mesmo</i><span>11:47</span></p></div></div><span class="home"></span></div></div>
   </div>
 </div></div>
 
 <section>
   <div class="wrap">
-    <div class="rot">01 · como funciona</div>
+    <div class="rot">o que chega no grupo</div>
+    <h2>Achados assim, todo dia. <span class="mao">e some rápido ✓</span></h2>
+    <div class="vitrine">
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/nespresso-essenza-mini.jpg" alt="Cafeteira Nespresso Essenza Mini" loading="lazy"></div><span class="loja">Amazon</span><b class="nome">Cafeteira Nespresso Essenza Mini</b><span class="de">R$ 829,00</span><span class="por">R$ 479,00 <em>-42%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/airfryer-britania-3l.jpg" alt="Air Fryer Britânia Bella Cuccina 3L" loading="lazy"></div><span class="loja">Shopee</span><b class="nome">Air Fryer Britânia Bella Cuccina 3L</b><span class="de">R$ 369,90</span><span class="por">R$ 199,90 <em>-46%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/tapo-c500.webp" alt="Câmera de Segurança TP-Link Tapo C500 360°" loading="lazy"></div><span class="loja">Mercado Livre</span><b class="nome">Câmera de Segurança TP-Link Tapo C500 360°</b><span class="de">R$ 299,00</span><span class="por">R$ 171,75 <em>-43%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/ergorapido-electrolux.jpg" alt="Aspirador Vertical Electrolux Ergorapido 2 em 1" loading="lazy"></div><span class="loja">Amazon</span><b class="nome">Aspirador Vertical Electrolux Ergorapido 2 em 1</b><span class="de">R$ 1.059,90</span><span class="por">R$ 499,90 <em>-53%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/liquidificador-mondial.jpg" alt="Liquidificador Mondial Turbo Power 550W" loading="lazy"></div><span class="loja">Shopee</span><b class="nome">Liquidificador Mondial Turbo Power 550W</b><span class="de">R$ 174,98</span><span class="por">R$ 121,42 <em>-31%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/tv-philips-43.webp" alt="Smart TV Philips 43" QLED Full HD" loading="lazy"></div><span class="loja">Mercado Livre</span><b class="nome">Smart TV Philips 43" QLED Full HD</b><span class="de">R$ 2.149,00</span><span class="por">R$ 1.424,00 <em>-34%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/oster-multiprocessador.jpg" alt="Multiprocessador Oster 7 em 1" loading="lazy"></div><span class="loja">Amazon</span><b class="nome">Multiprocessador Oster 7 em 1</b><span class="de">R$ 589,00</span><span class="por">R$ 339,90 <em>-42%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/karcher-vcl2.jpg" alt="Aspirador Vertical Kärcher VCL 2" loading="lazy"></div><span class="loja">Shopee</span><b class="nome">Aspirador Vertical Kärcher VCL 2</b><span class="de">R$ 399,00</span><span class="por">R$ 230,00 <em>-42%</em></span></a>
+<a class="card" href="https://api.saiuemconta.com.br/entrar?de=site_vitrine" rel="noopener"><div class="foto"><img src="img/galaxy-a17-5g.webp" alt="Samsung Galaxy A17 5G 128 GB" loading="lazy"></div><span class="loja">Mercado Livre</span><b class="nome">Samsung Galaxy A17 5G 128 GB</b><span class="de">R$ 1.855,00</span><span class="por">R$ 1.079,00 <em>-42%</em></span></a>
+    </div>
+    <p class="nota">Preços vistos nas lojas em 02/11/2026. Oferta boa acaba rápido: no grupo ela chega na hora.</p>
+    <div class="meio"><a class="btn btn-zap" href="https://api.saiuemconta.com.br/entrar?de=site_meio" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.67.99 3.27 1.59 5.39 1.59 5.45 0 9.89-4.43 9.89-9.88a9.88 9.88 0 0 0-9.88-9.89c-5.46 0-9.89 4.43-9.89 9.88 0 2.23.65 3.9 1.75 5.65l-1 3.65 3.74-.99zm11.39-5.46c-.07-.12-.27-.2-.57-.35-.29-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41z"/></svg> Quero receber os achados</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rot">como funciona</div>
     <h2>A gente faz a conta. <span class="mao">você só clica ✓</span></h2>
     <div class="passos">
-      <div class="passo"><div class="n">01</div><h3>Procuramos o dia inteiro</h3><p>Shopee, Amazon, Mercado Livre e Magalu, o tempo todo, atrás do preço que caiu.</p></div>
-      <div class="passo"><div class="n">02</div><h3>Conferimos o histórico</h3><p>Guardamos o preço de cada produto. Se o desconto não é real, a oferta não entra.</p></div>
-      <div class="passo"><div class="n">03</div><h3>Chega no seu WhatsApp</h3><p>No máximo 8 achados por dia, das 8h às 22h, com o preço de costume e o de hoje lado a lado.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="faixa">
-  <div class="wrap">
-    <div class="rot">02 · a diferença</div>
-    <h2>Desconto de verdade, conferido.</h2>
-    <div class="compara">
-      <div class="sombra fraco"><h3>O que muita oferta mostra</h3><div class="cupom">
-        <div class="lin"><span>DE</span><span class="p"></span><span class="risca">R$ 179,80</span></div>
-        <div class="lin"><span>POR</span><span class="p"></span><span>R$ 89,90</span></div>
-        <div class="lin"><span>"DESCONTO"</span><span class="p"></span><span>50%</span></div>
-      </div></div>
-      <div class="sombra"><h3>O que a gente confere</h3><div class="cupom">
-        <div class="lin"><span>COSTUMA SAIR POR</span><span class="p"></span><span>R$ 89,90</span></div>
-        <div class="lin"><span>HOJE</span><span class="p"></span><span>R$ 89,90</span></div>
-        <div class="lin"><span>QUEDA REAL</span><span class="p"></span><span>0%</span></div>
-        <div class="tr"></div>
-        <div class="lin"><span class="nao">ESSA NÃO VAI PRO GRUPO</span></div>
-      </div></div>
+      <div class="passo"><div class="n">01</div><h3>Garimpamos o dia inteiro</h3><p>Amazon, Shopee e Mercado Livre, o tempo todo, atrás do preço que caiu.</p></div>
+      <div class="passo"><div class="n">02</div><h3>Conferimos o preço</h3><p>Guardamos o preço de cada produto. Desconto inflado não entra no grupo.</p></div>
+      <div class="passo"><div class="n">03</div><h3>Chega no seu WhatsApp</h3><p>No máximo 8 achados por dia, das 8h às 22h, com foto, preço e link da loja.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="rot">03 · combinado</div>
-    <h2>Regras do grupo</h2>
-    <div class="regras">
-      <div class="regra"><b>8</b><span>achados por dia, no máximo</span></div>
-      <div class="regra"><b>0</b><span>pedido de Pix, senha ou código</span></div>
-      <div class="regra"><b>100%</b><span>links de loja oficial</span></div>
-      <div class="regra"><b>R$ 0</b><span>para entrar e ficar</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="rot">04 · perguntas</div>
+    <div class="rot">perguntas</div>
     <h2>Antes de entrar</h2>
     <details><summary>É de graça mesmo? Como vocês ganham?</summary><p>É. Os links são de afiliado: quando você compra, a loja paga uma comissão pra gente. Você paga exatamente o mesmo preço. É isso que mantém o grupo de graça.</p></details>
-    <details><summary>Isso é golpe?</summary><p>Não. Todo link leva para a loja oficial (Shopee, Amazon, Mercado Livre, Magalu) e a compra é feita lá, com a garantia da loja. A gente nunca pede Pix, senha, código ou dado pessoal.</p></details>
+    <details><summary>Isso é golpe?</summary><p>Não. Todo link leva para a loja oficial (Amazon, Shopee, Mercado Livre) e a compra é feita lá, com a garantia da loja. A gente nunca pede Pix, senha, código ou dado pessoal.</p></details>
     <details><summary>Vou receber mensagem demais?</summary><p>No máximo 8 por dia, das 8h às 22h. Só os admins postam, então não tem conversa paralela. Dá para silenciar e olhar quando quiser.</p></details>
-    <details><summary>Como vocês sabem que o preço caiu de verdade?</summary><p>A gente guarda o preço de cada produto ao longo dos dias. O post mostra quanto ele costuma custar e quanto está hoje. Se não caiu de verdade, não entra.</p></details>
     <details><summary>E se o grupo estiver cheio?</summary><p>O botão leva sempre para o grupo que ainda tem vaga. Todos recebem os mesmos achados.</p></details>
   </div>
 </section>
@@ -220,33 +214,13 @@
         stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
 </g></svg></div>
     <h2>Achado bom é o que sai em conta.</h2>
-    <a class="btn btn-zap" id="entrar2" href="#" rel="noopener">Entrar no grupo grátis</a>
+    <p>Entre no grupo e receba o próximo achado no seu WhatsApp.</p>
+    <a class="btn btn-claro" href="https://api.saiuemconta.com.br/entrar?de=site_final" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.67.99 3.27 1.59 5.39 1.59 5.45 0 9.89-4.43 9.89-9.88a9.88 9.88 0 0 0-9.88-9.89c-5.46 0-9.89 4.43-9.89 9.88 0 2.23.65 3.9 1.75 5.65l-1 3.65 3.74-.99zm11.39-5.46c-.07-.12-.27-.2-.57-.35-.29-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41z"/></svg> Entrar no grupo grátis</a>
   </div>
 </div>
 
 <footer>
-  <div class="wrap">Saiu em Conta · Links de afiliado: você paga o mesmo preço e a loja nos paga uma comissão. Como associado da Amazon, o Saiu em Conta ganha com compras qualificadas. Preços e estoque podem mudar a qualquer momento na loja.</div>
+  <div class="wrap">Saiu em Conta · Links de afiliado: você paga o mesmo preço e a loja nos paga uma comissão. Como associado da Amazon, o Saiu em Conta ganha com compras qualificadas. Preços e estoque podem mudar a qualquer momento na loja. Marcas e imagens de produtos pertencem aos seus donos.</div>
 </footer>
-
-<script>
-  // Convites em ordem. Quando um grupo encher, marque cheio:true e o botão passa para o próximo.
-  // Enquanto não houver convite (link vazio), o botão leva ao Instagram.
-  const GRUPOS = [
-    { nome: "Saiu em Conta #1", link: "", cheio: false },
-  ];
-  const TELEGRAM = "";  // ex.: https://t.me/saiuemconta, quando o canal existir
-  const INSTAGRAM = "https://www.instagram.com/saiuemconta/";
-  const grupo = GRUPOS.find(g => g.link && !g.cheio) || GRUPOS.filter(g => g.link).pop();
-  for (const id of ["entrar", "entrar2"]) {
-    const b = document.getElementById(id);
-    if (grupo) { b.href = grupo.link; continue; }
-    b.href = INSTAGRAM;
-    b.lastChild.textContent = " Seguir no Instagram";
-    b.querySelector("svg")?.remove();
-  }
-  const tg = document.getElementById("telegram");
-  if (TELEGRAM) tg.href = TELEGRAM; else tg.remove();
-  if (!grupo) document.querySelector(".miudo").textContent = "O grupo do WhatsApp abre em breve. Siga no Instagram para saber primeiro.";
-</script>
 </body>
 </html>
