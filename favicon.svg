@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="Saiu em Conta"><g transform="rotate(-5 100 115)">
+  <path d="M34 14 H166 V196 L155.0 210 L144.0 196 L133.0 210 L122.0 196 L111.0 210 L100.0 196 L89.0 210 L78.0 196 L67.0 210 L56.0 196 L45.0 210 L34.0 196 Z" fill="#FFF6E6"/>
+  <rect x="56" y="40" width="88" height="9" rx="4.5" fill="#18201C" opacity=".28"/>
+  <rect x="56" y="60" width="60" height="9" rx="4.5" fill="#18201C" opacity=".28"/>
+  <path d="M60 128 C70 136 80 148 90 160 C104 132 124 104 148 84" fill="none" stroke="#2D4BFF"
+        stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>

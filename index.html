@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saiu em Conta | Achado bom é o que sai em conta</title>
+<meta name="description" content="Grupo grátis de ofertas no WhatsApp. Antes de postar, a gente confere o histórico do preço: só entra o que caiu de verdade. No máximo 8 achados por dia.">
+<meta property="og:title" content="Saiu em Conta">
+<meta property="og:description" content="Achado bom é o que sai em conta. Ofertas conferidas contra o histórico, grátis no WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saiuemconta.com.br/">
+<meta property="og:image" content="https://saiuemconta.com.br/og.png">
+<meta name="theme-color" content="#0B7A55">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://saiuemconta.com.br/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700;800&family=Inter+Tight:wght@400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root { --v:#0B7A55; --c:#FFF6E6; --g:#18201C; --k:#2D4BFF; --m:#CFF3E0; --zap:#25D366; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--c); color:var(--g); font:400 17px/1.55 "Inter Tight", system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:inherit; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+  .mao { font-family:Caveat, cursive; color:var(--k); font-weight:700; }
+
+  .topo { background:var(--v); color:var(--c); }
+  header { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
+  .logo { width:170px; }
+  .selo { white-space:nowrap; font:700 12px "JetBrains Mono"; letter-spacing:.08em; border:1px solid rgba(255,246,230,.35); padding:7px 11px; border-radius:99px; }
+
+  .heroi { padding:40px 0 90px; display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
+  h1 { font:900 clamp(44px, 6.4vw, 76px)/.96 Archivo; font-variation-settings:"wdth" 74; letter-spacing:-.01em; }
+  h1 .mao { color:var(--c); font-size:.52em; display:block; margin-top:12px; letter-spacing:0; }
+  .sub { margin-top:22px; font-size:20px; max-width:32ch; color:#E6F5EC; }
+  .ctas { margin-top:30px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:17px 26px; border-radius:14px; font-weight:700; text-decoration:none; font-size:17px; transition:transform .15s; }
+  .btn:active { transform:scale(.97); }
+  .btn-zap { background:var(--c); color:var(--v); }
+  .btn-zap svg { color:var(--zap); }
+  .btn-tg { border:1px solid rgba(255,246,230,.4); color:var(--c); }
+  .miudo { margin-top:14px; font-size:13px; color:#BFE3CF; }
+
+  .cupom { background:var(--c); color:var(--g); font-family:"JetBrains Mono"; padding:34px 30px 46px; position:relative; clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),97.5% 100%,95% calc(100% - 14px),92.5% 100%,90% calc(100% - 14px),87.5% 100%,85% calc(100% - 14px),82.5% 100%,80% calc(100% - 14px),77.5% 100%,75% calc(100% - 14px),72.5% 100%,70% calc(100% - 14px),67.5% 100%,65% calc(100% - 14px),62.5% 100%,60% calc(100% - 14px),57.5% 100%,55% calc(100% - 14px),52.5% 100%,50% calc(100% - 14px),47.5% 100%,45% calc(100% - 14px),42.5% 100%,40% calc(100% - 14px),37.5% 100%,35% calc(100% - 14px),32.5% 100%,30% calc(100% - 14px),27.5% 100%,25% calc(100% - 14px),22.5% 100%,20% calc(100% - 14px),17.5% 100%,15% calc(100% - 14px),12.5% 100%,10% calc(100% - 14px),7.5% 100%,5% calc(100% - 14px),2.5% 100%,0 calc(100% - 14px)); }
+  .sombra { filter:drop-shadow(0 26px 30px rgba(0,0,0,.28)); }
+  .heroi .sombra { transform:rotate(-2deg); max-width:410px; margin-left:auto; }
+  .cab { text-align:center; font-weight:800; font-size:13px; letter-spacing:.3em; color:var(--v); }
+  .sub2 { text-align:center; font-size:11.5px; opacity:.6; margin-top:4px; }
+  .tr { border-top:2px dashed var(--g); opacity:.22; margin:18px 0; }
+  .item { font:700 22px/1.15 "Inter Tight"; }
+  .lin { display:flex; align-items:baseline; gap:10px; font-weight:700; font-size:13.5px; margin-top:12px; }
+  .lin .p { flex:1; border-bottom:2px dotted var(--g); opacity:.3; transform:translateY(-4px); }
+  .lin .v { position:relative; white-space:nowrap; }
+  .lin.hoje { margin-top:22px; }
+  .lin.hoje .v { font-size:38px; font-weight:800; color:var(--v); letter-spacing:-1px; }
+  .circulo { position:absolute; left:-18px; top:-8px; width:calc(100% + 36px); height:calc(100% + 16px); pointer-events:none; }
+  .lin.eco { color:var(--v); margin-top:18px; }
+  .af { text-align:center; font-size:11px; opacity:.6; }
+
+  section { padding:84px 0; }
+  section + section { border-top:1px solid #EADFCB; }
+  .rot { font:700 12px "JetBrains Mono"; letter-spacing:.16em; text-transform:uppercase; color:var(--v); }
+  h2 { font:900 clamp(36px, 5.6vw, 58px)/.98 Archivo; font-variation-settings:"wdth" 74; margin:12px 0 34px; max-width:18ch; }
+  h2 .mao { font-size:.7em; display:block; }
+
+  .passos { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .passo { background:#fff; border:1px solid #EADFCB; border-radius:16px; padding:28px 24px; }
+  .passo .n { font:800 13px "JetBrains Mono"; color:var(--v); }
+  .passo h3 { font:800 23px/1.1 Archivo; font-variation-settings:"wdth" 80; margin:12px 0 8px; }
+  .passo p { color:#4A524D; font-size:16px; }
+
+  .faixa { background:var(--m); }
+  .compara { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+  .compara h3 { font:800 14px "JetBrains Mono"; letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; color:var(--v); }
+  .compara .fraco .cupom { opacity:.75; }
+  .risca { text-decoration:line-through; }
+  .nao { font-weight:800; }
+
+  .regras { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .regra { padding:22px; background:#fff; border:1px solid #EADFCB; border-radius:16px; }
+  .regra b { display:block; font:900 34px Archivo; font-variation-settings:"wdth" 70; color:var(--v); }
+  .regra span { color:#4A524D; font-size:15px; }
+
+  details { border-bottom:1px solid #EADFCB; padding:20px 0; }
+  summary { cursor:pointer; font-weight:700; font-size:18px; list-style:none; display:flex; justify-content:space-between; gap:20px; }
+  summary::after { content:"+"; color:var(--v); font-family:"JetBrains Mono"; font-weight:800; }
+  details[open] summary::after { content:"×"; }
+  details p { margin-top:12px; color:#4A524D; max-width:70ch; }
+
+  .final { background:var(--v); color:var(--c); text-align:center; padding:96px 0; }
+  .final .simb { width:110px; margin:0 auto 18px; }
+  .final h2 { margin:0 auto 26px; }
+  footer { padding:34px 0 60px; color:#6F766F; font-size:13px; }
+
+  @media (max-width: 860px) {
+    .heroi { grid-template-columns:1fr; padding-top:16px; gap:56px; }
+    .heroi .sombra { margin:0 auto; }
+    .passos, .compara { grid-template-columns:1fr; }
+    .regras { grid-template-columns:1fr 1fr; }
+    .selo { font-size:10px; padding:6px 9px; }
+    .logo { width:130px; }
+    section { padding:64px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="topo"><div class="wrap">
+  <header>
+    <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" role="img" aria-label="Saiu em Conta">
+<g transform="translate(0 5)"><g transform="rotate(-5 100 115)">
+  <path d="M34 14 H166 V196 L155.0 210 L144.0 196 L133.0 210 L122.0 196 L111.0 210 L100.0 196 L89.0 210 L78.0 196 L67.0 210 L56.0 196 L45.0 210 L34.0 196 Z" fill="#FFF6E6"/>
+  <rect x="56" y="40" width="88" height="9" rx="4.5" fill="#18201C" opacity=".28"/>
+  <rect x="56" y="60" width="60" height="9" rx="4.5" fill="#18201C" opacity=".28"/>
+  <path d="M60 128 C70 136 80 148 90 160 C104 132 124 104 148 84" fill="none" stroke="#2D4BFF"
+        stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+</g></g>
+<text x="222" y="104" fill="#FFF6E6"
+      style="font-family:Archivo;font-weight:800;font-variation-settings:'wdth' 78;font-size:84px;letter-spacing:-1px">saiu em</text>
+<text x="218" y="212" fill="#FFF6E6"
+      style="font-family:Archivo;font-weight:900;font-variation-settings:'wdth' 78;font-size:136px;letter-spacing:-3px">conta</text>
+</svg></div>
+    <div class="selo">GRÁTIS · ATÉ 8 POR DIA</div>
+  </header>
+  <div class="heroi">
+    <div>
+      <h1>Ofertas que saem em conta de verdade.<span class="mao">achado bom é o que sai em conta ✓</span></h1>
+      <p class="sub">Achados das lojas que você já conhece, direto no seu WhatsApp. Antes de postar, a gente confere o histórico do preço: só entra o que caiu de verdade.</p>
+      <div class="ctas">
+        <a class="btn btn-zap" id="entrar" href="#" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.69-6.16A11.87 11.87 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zm6.6-3.8c1.67.99 3.27 1.59 5.39 1.59 5.45 0 9.89-4.43 9.89-9.88a9.88 9.88 0 0 0-9.88-9.89c-5.46 0-9.89 4.43-9.89 9.88 0 2.23.65 3.9 1.75 5.65l-1 3.65 3.74-.99zm11.39-5.46c-.07-.12-.27-.2-.57-.35-.29-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41z"/></svg>
+          Entrar no grupo grátis
+        </a>
+        <a class="btn btn-tg" id="telegram" href="#" rel="noopener">Prefiro Telegram</a>
+      </div>
+      <p class="miudo">Só os admins postam. Silencie se quiser. Sai quando quiser.</p>
+    </div>
+    <div class="sombra">
+      <div class="cupom" aria-label="Exemplo de achado">
+        <div class="cab">SAIU EM CONTA</div>
+        <div class="sub2">achado nº 0001 · conta conferida</div>
+        <div class="tr"></div>
+        <div class="item">Air Fryer 5 Litros Digital</div>
+        <div class="tr"></div>
+        <div class="lin"><span>COSTUMA SAIR POR</span><span class="p"></span><span class="v">R$ 499,00</span></div>
+        <div class="lin hoje"><span>HOJE</span><span class="p"></span><span class="v">R$ 199<svg class="circulo" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M30 92 C 22 40, 140 18, 230 22 C 330 26, 390 60, 370 104 C 350 146, 200 150, 110 140 C 50 133, 18 110, 40 70" fill="none" stroke="#2D4BFF" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></div>
+        <div class="lin eco"><span>VOCÊ ECONOMIZA</span><span class="p"></span><span class="v">R$ 300,00</span></div>
+        <div class="tr"></div>
+        <div class="af">link de afiliado · você paga o mesmo</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<section>
+  <div class="wrap">
+    <div class="rot">01 · como funciona</div>
+    <h2>A gente faz a conta. <span class="mao">você só clica ✓</span></h2>
+    <div class="passos">
+      <div class="passo"><div class="n">01</div><h3>Procuramos o dia inteiro</h3><p>Shopee, Amazon, Mercado Livre e Magalu, o tempo todo, atrás do preço que caiu.</p></div>
+      <div class="passo"><div class="n">02</div><h3>Conferimos o histórico</h3><p>Guardamos o preço de cada produto. Se o desconto não é real, a oferta não entra.</p></div>
+      <div class="passo"><div class="n">03</div><h3>Chega no seu WhatsApp</h3><p>No máximo 8 achados por dia, das 8h às 22h, com o preço de costume e o de hoje lado a lado.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa">
+  <div class="wrap">
+    <div class="rot">02 · a diferença</div>
+    <h2>Desconto de verdade, conferido.</h2>
+    <div class="compara">
+      <div class="sombra fraco"><h3>O que muita oferta mostra</h3><div class="cupom">
+        <div class="lin"><span>DE</span><span class="p"></span><span class="risca">R$ 179,80</span></div>
+        <div class="lin"><span>POR</span><span class="p"></span><span>R$ 89,90</span></div>
+        <div class="lin"><span>"DESCONTO"</span><span class="p"></span><span>50%</span></div>
+      </div></div>
+      <div class="sombra"><h3>O que a gente confere</h3><div class="cupom">
+        <div class="lin"><span>COSTUMA SAIR POR</span><span class="p"></span><span>R$ 89,90</span></div>
+        <div class="lin"><span>HOJE</span><span class="p"></span><span>R$ 89,90</span></div>
+        <div class="lin"><span>QUEDA REAL</span><span class="p"></span><span>0%</span></div>
+        <div class="tr"></div>
+        <div class="lin"><span class="nao">ESSA NÃO VAI PRO GRUPO</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rot">03 · combinado</div>
+    <h2>Regras do grupo</h2>
+    <div class="regras">
+      <div class="regra"><b>8</b><span>achados por dia, no máximo</span></div>
+      <div class="regra"><b>0</b><span>pedido de Pix, senha ou código</span></div>
+      <div class="regra"><b>100%</b><span>links de loja oficial</span></div>
+      <div class="regra"><b>R$ 0</b><span>para entrar e ficar</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="rot">04 · perguntas</div>
+    <h2>Antes de entrar</h2>
+    <details><summary>É de graça mesmo? Como vocês ganham?</summary><p>É. Os links são de afiliado: quando você compra, a loja paga uma comissão pra gente. Você paga exatamente o mesmo preço. É isso que mantém o grupo de graça.</p></details>
+    <details><summary>Isso é golpe?</summary><p>Não. Todo link leva para a loja oficial (Shopee, Amazon, Mercado Livre, Magalu) e a compra é feita lá, com a garantia da loja. A gente nunca pede Pix, senha, código ou dado pessoal.</p></details>
+    <details><summary>Vou receber mensagem demais?</summary><p>No máximo 8 por dia, das 8h às 22h. Só os admins postam, então não tem conversa paralela. Dá para silenciar e olhar quando quiser.</p></details>
+    <details><summary>Como vocês sabem que o preço caiu de verdade?</summary><p>A gente guarda o preço de cada produto ao longo dos dias. O post mostra quanto ele costuma custar e quanto está hoje. Se não caiu de verdade, não entra.</p></details>
+    <details><summary>E se o grupo estiver cheio?</summary><p>O botão leva sempre para o grupo que ainda tem vaga. Todos recebem os mesmos achados.</p></details>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <div class="simb"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" role="img" aria-label="Saiu em Conta"><g transform="rotate(-5 100 115)">
+  <path d="M34 14 H166 V196 L155.0 210 L144.0 196 L133.0 210 L122.0 196 L111.0 210 L100.0 196 L89.0 210 L78.0 196 L67.0 210 L56.0 196 L45.0 210 L34.0 196 Z" fill="#FFF6E6"/>
+  <rect x="56" y="40" width="88" height="9" rx="4.5" fill="#18201C" opacity=".28"/>
+  <rect x="56" y="60" width="60" height="9" rx="4.5" fill="#18201C" opacity=".28"/>
+  <path d="M60 128 C70 136 80 148 90 160 C104 132 124 104 148 84" fill="none" stroke="#2D4BFF"
+        stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg></div>
+    <h2>Achado bom é o que sai em conta.</h2>
+    <a class="btn btn-zap" id="entrar2" href="#" rel="noopener">Entrar no grupo grátis</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Saiu em Conta · Links de afiliado: você paga o mesmo preço e a loja nos paga uma comissão. Preços e estoque podem mudar a qualquer momento na loja.</div>
+</footer>
+
+<script>
+  // Convites em ordem. Quando um grupo encher, marque cheio:true e o botão passa para o próximo.
+  // Enquanto não houver convite (link vazio), o botão leva ao Instagram.
+  const GRUPOS = [
+    { nome: "Saiu em Conta #1", link: "", cheio: false },
+  ];
+  const TELEGRAM = "";  // ex.: https://t.me/saiuemconta, quando o canal existir
+  const INSTAGRAM = "https://www.instagram.com/saiuemconta/";
+  const grupo = GRUPOS.find(g => g.link && !g.cheio) || GRUPOS.filter(g => g.link).pop();
+  for (const id of ["entrar", "entrar2"]) {
+    const b = document.getElementById(id);
+    if (grupo) { b.href = grupo.link; continue; }
+    b.href = INSTAGRAM;
+    b.lastChild.textContent = " Seguir no Instagram";
+    b.querySelector("svg")?.remove();
+  }
+  const tg = document.getElementById("telegram");
+  if (TELEGRAM) tg.href = TELEGRAM; else tg.remove();
+  if (!grupo) document.querySelector(".miudo").textContent = "O grupo do WhatsApp abre em breve. Siga no Instagram para saber primeiro.";
+</script>
+</body>
+</html>
