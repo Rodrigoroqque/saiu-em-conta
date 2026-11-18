@@ -90,7 +90,7 @@
   .heroi .texto .btn { width:100%; }
 
   /* palco: canvas 3D atrás, celular na frente */
-  .palco { position:relative; height:850px; margin:6px -16px 0; perspective:1100px; --rx:0deg; --ry:0deg; touch-action:pan-y; }
+  .palco { position:relative; height:906px; margin:6px -16px 0; perspective:1100px; --rx:0deg; --ry:0deg; touch-action:pan-y; }
   .palco canvas.cena3d { position:absolute; inset:0; width:100%; height:100%; display:block; opacity:0; transition:opacity .6s; }
   .palco.com-3d canvas.cena3d { opacity:1; }
   .palco.com-3d .estatico { opacity:0; visibility:hidden; }
@@ -167,6 +167,16 @@
   .passos li { flex:1; text-align:center; font:700 12.5px/1.2 "Inter Tight", sans-serif; color:rgba(255,246,230,.6); padding:8px 6px 0; border-top:3px solid rgba(255,246,230,.25); transition:color .3s, border-color .3s; }
   .passos li.ativo { color:var(--cupom); border-color:var(--menta); }
   .nota-fone { font-size:12px; color:rgba(255,246,230,.75); text-align:center; max-width:330px; }
+  .tela-print { background:#fff; }
+  .tela-print .ilha { z-index:9; }
+  .tela-print > img, .p-loja img { position:absolute; left:0; top:0; width:100%; height:auto; display:block; will-change:transform; }
+  .tela-print > img.embaixo { top:auto; bottom:0; }
+  .p-loja { position:absolute; inset:0; overflow:hidden; background:#fff; transform:translateX(102%); transition:transform .45s cubic-bezier(.3,.8,.3,1); z-index:5; box-shadow:-8px 0 24px rgba(0,0,0,.18); }
+  .p-loja.aberta { transform:none; }
+  .realce { position:absolute; z-index:4; border-radius:6px; background:rgba(31,95,214,.22); opacity:0; transition:opacity .2s; pointer-events:none; }
+  .realce.on { opacity:1; }
+  .legenda-caso { font:700 14px/1.4 "Inter Tight", sans-serif; color:var(--cupom); text-align:center; max-width:330px; min-height:40px; }
+  .parado .tres .legenda-caso { flex:none; align-self:center; max-width:220px; text-align:left; }
   .ctrl { background:transparent; border:1.5px solid rgba(255,246,230,.5); color:var(--cupom); border-radius:99px; padding:6px 12px; font:700 12px/1 "Inter Tight", sans-serif; }
 
   /* menos movimento: os 3 passos parados, lado a lado */
@@ -333,7 +343,7 @@
     .heroi .texto .btn { width:auto; justify-self:start; }
     .sub { font-size:19px; }
     .palco { height:700px; margin:0; }
-    .palco { height:720px; margin:0 -40px 0 0; }
+    .palco { height:770px; margin:0 -40px 0 0; }
     .fone-area { top:40px; }
     .estatico .cupom-fixo { width:200px; height:230px; top:20px; transform:translateX(10%) rotate(9deg); }
     .estatico .prod { width:110px; } .estatico .prod img { height:110px; }
@@ -385,20 +395,20 @@
       <canvas class="cena3d" aria-hidden="true"></canvas>
       <div class="estatico" aria-hidden="true"></div>
       <div class="fone-area">
-        <div class="fone" role="img" aria-label="Simulação: chega a oferta no grupo, você toca no link e a loja abre para comprar." tabindex="-1">
-          <div class="tela">
+        <div class="fone" role="img" aria-label="Prints reais do celular: a oferta no grupo, o toque no link e o app da loja aberto no mesmo produto (sabonete Darrow no Mercado Livre e painel LED na Shopee)." tabindex="-1">
+          <div class="tela tela-print">
             <div class="ilha"></div>
-            <div class="status"><span class="hora-st">20:07</span><svg viewBox="0 0 36 12" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="18" y="1.5" width="16" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="19.8" y="3.3" width="10" height="5.4" rx="1.2"/></g></svg></div>
-            <div class="chat-topo"><svg class="volta" aria-hidden="true"><use href="#volta"/></svg><span class="av"><svg aria-hidden="true"><use href="#cupom-logo"/></svg></span><span><b>Saiu em Conta</b><small>grupo de ofertas</small></span></div>
-            <div class="msgs"></div>
-            <div class="loja" aria-hidden="true"></div>
+            <img class="p-grupo" src="img/home/print-grupo-darrow.webp" width="456" height="989" alt="" decoding="async">
+            <div class="realce" aria-hidden="true"></div>
+            <div class="p-loja" aria-hidden="true"><img src="img/home/print-ml-darrow.webp" width="456" height="989" alt="" decoding="async"></div>
             <div class="dedo" aria-hidden="true"></div>
           </div>
           <div class="pausa">pausado: toque para continuar</div>
         </div>
-        <ol class="passos" aria-hidden="true"><li data-p="1">Chega a oferta conferida</li><li data-p="2">Você toca</li><li data-p="3">Compra direto na loja, pelo mesmo preço</li></ol>
+        <ol class="passos" aria-hidden="true"><li data-p="1">Chega a oferta conferida</li><li data-p="2">Você toca no link</li><li data-p="3">Abre direto no app da loja</li></ol>
+        <p class="legenda-caso" aria-hidden="true"></p>
         <button class="ctrl" type="button" aria-pressed="false">Pausar animação</button>
-        <p class="nota-fone">Ofertas reais que saíram no grupo. O preço de hoje pode ser outro.</p>
+        <p class="nota-fone">Prints reais do celular, tirados em 18/11.</p>
       </div>
       <div class="tres" aria-label="Como funciona, em três passos"></div>
     </div>
@@ -505,75 +515,71 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
     io.observe(el);
   }
 
-  /* ---------- celular: grupo, toque e loja ---------- */
-  var palco = $('.palco'), fone = $('.fone'), msgs = $('.msgs'), loja = $('.loja'), dedo = $('.dedo');
-  var horaSt = $('.hora-st'), passos = document.querySelectorAll('.passos li'), ctrl = $('.ctrl');
-  function bolha(o) {
-    return '<div class="quem">Saiu em Conta</div>' + img(o.foto, o.titulo) +
-      '<div class="conf">CONTA CONFERIDA</div><div class="tt">' + esc(o.titulo) + '</div>' +
-      '<div class="pr"><b>' + brl(o.preco) + '</b><i>-' + pct(o.preco_antes, o.preco) + '%</i></div>' +
-      '<div class="era">era <s>' + brl(o.preco_antes) + '</s> no nosso registro</div>' +
-      '<span class="lk">abrir no ' + esc(o.loja) + '</span><span class="hr">' + o.hora.replace('h', ':') + '</span>';
-  }
-  function telaLoja(o) {
-    return '<div class="status" style="padding-top:6px"><span>' + o.hora.replace('h', ':') + '</span><svg viewBox="0 0 36 12" aria-hidden="true"><g fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="18" y="1.5" width="16" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="19.8" y="3.3" width="10" height="5.4" rx="1.2"/></g></svg></div>' +
-      '<div class="barra-loja"><svg aria-hidden="true"><use href="#volta"/></svg>' + esc(o.loja) +
-      '<svg class="busca" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>' +
-      '<div class="foto">' + img(o.foto, o.titulo) + '</div><div class="info"><div class="nome">' + esc(o.titulo) + '</div>' +
-      '<div class="preco">' + brl(o.preco) + '</div><div class="nota">preço de quando saiu no grupo (' + o.dia + ')</div></div>' +
-      '<div class="comprar">Comprar</div><div class="carrinho">Adicionar ao carrinho</div>';
-  }
-  function marcaPasso(n) { for (var i = 0; i < passos.length; i++) passos[i].classList.toggle('ativo', +passos[i].dataset.p === n); }
-  function moverDedo(alvo) {
-    var t = $('.tela').getBoundingClientRect(), r = alvo.getBoundingClientRect();
-    dedo.style.left = (r.left - t.left + Math.min(r.width * 0.6, 60)) + 'px';
-    dedo.style.top = (r.top - t.top + r.height / 2) + 'px';
-    dedo.classList.add('on');
-  }
-  function tocar(alvo) { dedo.classList.remove('toca'); void dedo.offsetWidth; dedo.classList.add('toca'); alvo.classList.add('tocado'); }
-
-  var ofertas = D.celular, atual = null;
-  var EV = [
-    [0, function (c) {
-      atual = ofertas[c % ofertas.length];
-      var b = document.createElement('div'); b.className = 'bolha chegando'; b.innerHTML = bolha(atual);
-      msgs.appendChild(b);
-      var todas = msgs.querySelectorAll('.bolha'); if (todas.length > 2) todas[0].remove();
-      var chip = msgs.querySelector('.data-chip'); if (!chip) { chip = document.createElement('div'); chip.className = 'data-chip'; msgs.insertBefore(chip, msgs.firstChild); }
-      chip.textContent = atual.dia;
-      horaSt.textContent = atual.hora.replace('h', ':');
-      loja.innerHTML = telaLoja(atual);
-      dedo.classList.remove('on'); dedo.style.left = '82%'; dedo.style.top = '98%';
-      marcaPasso(1);
-    }],
-    [2500, function () { var lk = msgs.querySelector('.bolha:last-child .lk'); if (lk) moverDedo(lk); marcaPasso(2); }],
-    [3250, function () { var lk = msgs.querySelector('.bolha:last-child .lk'); if (lk) tocar(lk); }],
-    [3700, function () { loja.classList.add('aberta'); dedo.classList.remove('on'); marcaPasso(3); }],
-    [5300, function () { var c = loja.querySelector('.comprar'); if (c) moverDedo(c); }],
-    [6000, function () { var c = loja.querySelector('.comprar'); if (c) tocar(c); }],
-    [7100, function () { loja.classList.remove('aberta'); dedo.classList.remove('on'); }]
+  /* ---------- celular: prints reais do grupo e dos apps ---------- */
+  var palco = $('.palco'), fone = $('.fone'), tela = $('.tela-print'), grupo = $('.p-grupo'), loja = $('.p-loja'), lojaImg = $('.p-loja img');
+  var dedo = $('.dedo'), realce = $('.realce'), legenda = $('.legenda-caso');
+  var passos = document.querySelectorAll('.passos li'), ctrl = $('.ctrl');
+  var D0 = D.celular[0];  /* Darrow: saiu no grupo em D0.dia às D0.hora */
+  var LEG_A = 'No grupo saiu a ' + brl(D0.preco) + ' em ' + D0.dia + ', às ' + D0.hora + '. Em 18/11, no app, estava R$ 72,74. Quem estava no grupo pegou.';
+  var P1 = D.vitrine.filter(function (o) { return o.id === '22697508075'; })[0] || { preco: 76.9, dia: '17/11', hora: '21h07' };
+  var VOLTAS = [
+    { grupo: 'img/home/print-grupo-darrow.webp', loja: 'img/home/print-ml-darrow.webp', leg: LEG_A,
+      link: { x: 0.30, y: 0.862, x0: 0.13, x1: 0.49, y0: 0.832, y1: 0.895 } },
+    { grupo: 'img/home/print-grupo-painel.webp', loja: 'img/home/print-shopee-painel.webp', leg: 'Mesmo preço do grupo, direto no app da loja.',
+      link: { x: 0.38, y: 0.857, x0: 0.13, x1: 0.69, y0: 0.836, y1: 0.9 } }
   ];
-  var CICLO = 7800;
+  var V = VOLTAS[0];
+  function marcaPasso(n) { for (var i = 0; i < passos.length; i++) passos[i].classList.toggle('ativo', +passos[i].dataset.p === n); }
+  function sobra(img) { return Math.max(0, img.getBoundingClientRect().height - tela.clientHeight); }
+  function rolar(img, ate, ms) { img.style.transition = 'transform ' + ms + 'ms ease-in-out'; img.style.transform = 'translateY(' + (-ate) + 'px)'; }
+  function noLink(fx, fy) {
+    var t = tela.getBoundingClientRect(), r = grupo.getBoundingClientRect();
+    return { x: r.left - t.left + fx * r.width, y: r.top - t.top + fy * r.height };
+  }
+  function abrirLoja(src) { lojaImg.src = src; rolar(lojaImg, 0, 0); loja.classList.add('aberta'); }
 
-  function telaParada(passo, o) {
-    var h = '<div class="fone"><div class="tela"><div class="ilha"></div>';
+  /* cada volta: grupo (passo 1), toque no link (passo 2), app da loja (passo 3); a próxima volta fecha o app e mostra a próxima oferta */
+  var VOLTA = 7300;
+  var EV_VOLTA = [
+    [0, function () {
+      grupo.src = V.grupo; rolar(grupo, 0, 0);
+      loja.classList.remove('aberta'); realce.classList.remove('on'); dedo.classList.remove('on', 'toca');
+      dedo.style.left = '82%'; dedo.style.top = '104%';
+      legenda.textContent = V.leg; marcaPasso(1);
+    }],
+    [700, function () { rolar(grupo, sobra(grupo), 1400); }],
+    [2400, function () { var c = noLink(V.link.x, V.link.y); dedo.style.left = c.x + 'px'; dedo.style.top = c.y + 'px'; dedo.classList.add('on'); marcaPasso(2); }],
+    [3200, function () {
+      var a = noLink(V.link.x0, V.link.y0), b = noLink(V.link.x1, V.link.y1);
+      realce.style.left = a.x + 'px'; realce.style.top = a.y + 'px'; realce.style.width = (b.x - a.x) + 'px'; realce.style.height = (b.y - a.y) + 'px';
+      realce.classList.add('on'); dedo.classList.remove('toca'); void dedo.offsetWidth; dedo.classList.add('toca');
+    }],
+    [3700, function () { abrirLoja(V.loja); dedo.classList.remove('on'); marcaPasso(3); }],
+    [4500, function () { rolar(lojaImg, sobra(lojaImg), 1800); }]
+  ];
+  var EV = [];
+  VOLTAS.forEach(function (v, k) { EV_VOLTA.forEach(function (e) { EV.push([k * VOLTA + e[0], function () { V = v; e[1](); }]); }); });
+  var CICLO = VOLTA * VOLTAS.length;
+
+  function telaParada(passo) {
+    var h = '<div class="fone"><div class="tela tela-print"><div class="ilha"></div>';
     if (passo < 3) {
-      h += '<div class="status"><span>' + o.hora.replace('h', ':') + '</span></div><div class="chat-topo"><span class="av"><svg aria-hidden="true"><use href="#cupom-logo"/></svg></span><span><b>Saiu em Conta</b><small>grupo de ofertas</small></span></div>' +
-           '<div class="msgs"><div class="data-chip">' + o.dia + '</div><div class="bolha">' + bolha(o).replace('class="lk"', passo === 2 ? 'class="lk tocado"' : 'class="lk"') + '</div></div>';
-      if (passo === 2) h += '<div class="dedo on" style="left:44%;top:91%"></div>';
+      h += '<img class="p-grupo' + (passo === 2 ? ' embaixo' : '') + '" src="img/home/print-grupo-darrow.webp" alt="">';
+      if (passo === 2) h += '<div class="realce on" style="left:13%;top:83%;width:36%;height:6.4%"></div><div class="dedo on" style="left:30%;top:86.3%"></div>';
     } else {
-      h += '<div class="loja aberta">' + telaLoja(o) + '</div>';
+      h += '<img class="p-grupo" src="img/home/print-ml-darrow.webp" alt="">';
     }
     return h + '</div></div>';
   }
 
   if (menos) {
     document.documentElement.classList.add('parado');
-    var o = ofertas[0], legs = ['Chega a oferta conferida', 'Você toca', 'Compra direto na loja, pelo mesmo preço'];
+    var legs = ['Chega a oferta conferida', 'Você toca no link', 'Abre direto no app da loja'];
     $('.tres').innerHTML = [1, 2, 3].map(function (p) {
-      return '<figure>' + telaParada(p, o) + '<figcaption><span>PASSO ' + p + '</span>' + legs[p - 1] + '</figcaption></figure>';
-    }).join('');
+      return '<figure>' + telaParada(p) + '<figcaption><span>PASSO ' + p + '</span>' + legs[p - 1] + '</figcaption></figure>';
+    }).join('') + '<p class="legenda-caso">' + LEG_A + '</p>';
   } else {
+    ['print-ml-darrow', 'print-grupo-painel', 'print-shopee-painel'].forEach(function (n) { var im = new Image(); im.src = 'img/home/' + n + '.webp'; });
     var vt = 0, ultimo = null, pausado = false, visivel = true, cicloAtual = -1, feitos = {};
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visivel = e[0].isIntersecting; }, { threshold: 0.15 }).observe(fone);
     var alternar = function () {
@@ -594,7 +600,7 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
 
   /* fundo parado do palco (antes do 3D, ou quando não há WebGL) */
   var est = $('.estatico');
-  est.innerHTML = '<svg class="cupom-fixo" aria-hidden="true"><use href="#cupom-logo"/></svg>' + ofertas.slice(0, 4).map(function (o, i) {
+  est.innerHTML = '<svg class="cupom-fixo" aria-hidden="true"><use href="#cupom-logo"/></svg>' + D.celular.slice(0, 4).map(function (o, i) {
     return '<div class="prod p' + (i + 1) + '">' + '<img src="img/home/' + o.foto + '-recorte.webp" alt="" decoding="async">' +
       '<span class="tag"><s>' + brl(o.preco_antes) + '</s><b>' + brl(o.preco) + '</b></span></div>';
   }).join('');
