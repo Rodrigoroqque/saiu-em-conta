@@ -173,7 +173,15 @@
 
   .passos { list-style:none; display:flex; gap:6px; width:min(360px, calc(100vw - 32px)); justify-content:center; }
   .passos li { flex:1; text-align:center; font:700 12.5px/1.2 "Inter Tight", sans-serif; color:rgba(255,246,230,.6); padding:8px 6px 0; border-top:3px solid rgba(255,246,230,.25); transition:color .3s, border-color .3s; }
-  .passos li.ativo { color:var(--cupom); border-color:var(--menta); }
+  .passos li { position:relative; }
+  .passos li::before { content:""; position:absolute; left:0; top:-3px; height:3px; width:0; background:var(--menta); border-radius:2px; }
+  .passos li.ativo { color:var(--cupom); }
+  .passos li.ativo::before { width:100%; transition:width var(--dur, 1s) linear; }
+  .passos li.feito { color:rgba(255,246,230,.85); }
+  .passos li.feito::before { width:100%; }
+  .tela-print.entra .p-grupo { animation:entraTela .45s ease-out backwards; }
+  @keyframes entraTela { from { opacity:0; transform:scale(1.03); } to { opacity:1; transform:none; } }
+  .dedo.toca { transform:scale(.82); }
   .nota-fone { font-size:12px; color:rgba(255,246,230,.75); text-align:center; max-width:330px; }
   .tela-print { background:#fff; }
   .tela-print .ilha { z-index:9; }
@@ -532,11 +540,19 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
   var VOLTAS = [
     { grupo: 'img/home/print-grupo-darrow.webp', loja: 'img/home/print-ml-darrow.webp', leg: LEG_A,
       link: { x: 0.30, y: 0.862, x0: 0.13, x1: 0.49, y0: 0.832, y1: 0.895 } },
-    { grupo: 'img/home/print-grupo-painel.webp', loja: 'img/home/print-shopee-painel.webp', leg: 'Mesmo preço do grupo, direto no app da loja.',
+    { grupo: 'img/home/print-grupo-painel.webp', loja: 'img/home/print-shopee-painel.webp', leg: 'Um toque no link do grupo e o mesmo produto abre no app da loja.',
       link: { x: 0.38, y: 0.857, x0: 0.13, x1: 0.69, y0: 0.836, y1: 0.9 } }
   ];
   var V = VOLTAS[0];
-  function marcaPasso(n) { for (var i = 0; i < passos.length; i++) passos[i].classList.toggle('ativo', +passos[i].dataset.p === n); }
+  function marcaPasso(n, ms) {
+    for (var i = 0; i < passos.length; i++) {
+      var p = +passos[i].dataset.p;
+      passos[i].classList.toggle('feito', p < n);
+      passos[i].classList.remove('ativo');
+      passos[i].style.setProperty('--dur', (ms || 1000) + 'ms');
+      if (p === n) { void passos[i].offsetWidth; passos[i].classList.add('ativo'); }
+    }
+  }
   function sobra(img) { return Math.max(0, img.getBoundingClientRect().height - tela.clientHeight); }
   function rolar(img, ate, ms) { img.style.transition = 'transform ' + ms + 'ms ease-in-out'; img.style.transform = 'translateY(' + (-ate) + 'px)'; }
   function noLink(fx, fy) {
@@ -547,21 +563,26 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
 
   /* cada volta: grupo (passo 1), toque no link (passo 2), app da loja (passo 3); a próxima volta fecha o app e mostra a próxima oferta */
   /* 21/11: o print tem a proporção da tela do iPhone 16, então não rola; o dedo aparece no link (sem viajar pela tela) */
-  var VOLTA = 6200;
+  /* volta de 7 s: grupo (2,4 s para ler), toque no link (0,8 s), app da loja empurrando o grupo como no iOS (3,8 s) */
+  var VOLTA = 7000;
   var EV_VOLTA = [
     [0, function () {
-      grupo.src = V.grupo; rolar(grupo, 0, 0);
-      loja.classList.remove('aberta'); realce.classList.remove('on'); dedo.classList.remove('on', 'toca');
-      dedo.style.left = '82%'; dedo.style.top = '104%';
-      legenda.textContent = V.leg; marcaPasso(1);
+      grupo.src = V.grupo; grupo.style.transition = 'none'; grupo.style.transform = 'none'; grupo.style.filter = 'none';
+      tela.classList.remove('entra'); void tela.offsetWidth; tela.classList.add('entra');
+      loja.style.transition = 'none'; loja.classList.remove('aberta'); void loja.offsetWidth; loja.style.transition = '';
+      realce.classList.remove('on'); dedo.classList.remove('on', 'toca');
+      dedo.style.transition = 'none'; legenda.textContent = V.leg; marcaPasso(1, 2400);
     }],
-    [1700, function () { var c = noLink(V.link.x, V.link.y); dedo.style.transition = 'opacity .25s'; dedo.style.left = c.x + 'px'; dedo.style.top = c.y + 'px'; dedo.classList.add('on'); marcaPasso(2); }],
-    [2200, function () {
+    [2400, function () { var c = noLink(V.link.x, V.link.y); dedo.style.transition = 'opacity .2s, transform .2s'; dedo.style.left = c.x + 'px'; dedo.style.top = c.y + 'px'; dedo.classList.add('on'); marcaPasso(2, 800); }],
+    [2750, function () {
       var a = noLink(V.link.x0, V.link.y0), b = noLink(V.link.x1, V.link.y1);
       realce.style.left = a.x + 'px'; realce.style.top = a.y + 'px'; realce.style.width = (b.x - a.x) + 'px'; realce.style.height = (b.y - a.y) + 'px';
       realce.classList.add('on'); dedo.classList.remove('toca'); void dedo.offsetWidth; dedo.classList.add('toca');
     }],
-    [2800, function () { abrirLoja(V.loja); dedo.classList.remove('on'); marcaPasso(3); }]
+    [3200, function () {
+      abrirLoja(V.loja); dedo.classList.remove('on'); marcaPasso(3, 3800);
+      grupo.style.transition = 'transform .5s cubic-bezier(.3,.8,.3,1), filter .5s'; grupo.style.transform = 'translateX(-28%)'; grupo.style.filter = 'brightness(.8)';
+    }]
   ];
   var EV = [];
   VOLTAS.forEach(function (v, k) { EV_VOLTA.forEach(function (e) { EV.push([k * VOLTA + e[0], function () { V = v; e[1](); }]); }); });
