@@ -104,12 +104,20 @@
   .estatico .p1 { left:6px; top:62px; } .estatico .p2 { left:22%; top:24px; } .estatico .p3 { right:22%; top:30px; } .estatico .p4 { right:6px; top:70px; }
 
   .fone-area { position:absolute; left:50%; top:212px; transform:translateX(-50%); display:grid; justify-items:center; gap:12px; z-index:2; }
-  .fone { --fw:246px; width:var(--fw); height:500px; border-radius:42px; background:#0f1412; padding:9px; position:relative;
-          box-shadow:0 0 0 2px #2a332f, 0 30px 60px rgba(0,0,0,.38), inset 0 0 0 2px #313b37;
-          transform:rotateX(var(--rx)) rotateY(var(--ry)); transform-style:preserve-3d; transition:transform .2s ease-out; cursor:pointer; }
-  .fone::before, .fone::after { content:""; position:absolute; width:3px; background:#2a332f; border-radius:2px; }
-  .fone::before { left:-4px; top:110px; height:54px; box-shadow:0 70px 0 #2a332f; }
-  .fone::after { right:-4px; top:140px; height:74px; }
+  /* iPhone 16 real (Roque 21/11): tela 393 x 852 pt, borda 20 pt (alumínio 4 + vidro preto 16), cantos 55 pt, Dynamic Island
+     126 x 37 pt a 11 pt do topo, botões Ação e volume à esquerda, lateral e Controle da Câmera à direita; --k = escala */
+  .fone { --k:.6; width:calc(433px * var(--k)); height:calc(892px * var(--k)); border-radius:calc(75px * var(--k)); padding:calc(4px * var(--k)); position:relative;
+          background:linear-gradient(135deg,#5b5b5f 0%,#2a2a2d 18%,#1c1c1e 50%,#2a2a2d 82%,#5b5b5f 100%);
+          box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), 0 0 0 .6px #0b0b0c, 0 30px 60px rgba(0,0,0,.38);
+          transform:rotateX(var(--rx)) rotateY(var(--ry)); transform-style:preserve-3d; transition:transform .2s ease-out; }
+  .fone > .tela { border:calc(16px * var(--k)) solid #050505; border-radius:calc(71px * var(--k)); box-sizing:border-box; }
+  .fone .ilha { top:calc(11px * var(--k)); width:calc(126px * var(--k)); height:calc(37px * var(--k)); border-radius:calc(19px * var(--k)); background:#000; }
+  .fone .tela::after { content:""; position:absolute; z-index:9; left:50%; bottom:calc(8px * var(--k)); width:calc(139px * var(--k)); height:calc(5px * var(--k)); transform:translateX(-50%); border-radius:3px; background:rgba(0,0,0,.82); }
+  .fone .bl { position:absolute; width:calc(4px * var(--k)); border-radius:2px; background:linear-gradient(90deg,#1a1a1c,#4a4a4e 55%,#2a2a2c); }
+  .fone .bl.e { left:calc(-3px * var(--k)); } .fone .bl.d { right:calc(-3px * var(--k)); background:linear-gradient(90deg,#2a2a2c,#4a4a4e 45%,#1a1a1c); }
+  .fone .bl.a { top:calc(128px * var(--k)); height:calc(33px * var(--k)); } .fone .bl.v1 { top:calc(196px * var(--k)); height:calc(62px * var(--k)); }
+  .fone .bl.v2 { top:calc(274px * var(--k)); height:calc(62px * var(--k)); } .fone .bl.l { top:calc(224px * var(--k)); height:calc(98px * var(--k)); }
+  .fone .bl.cc { top:calc(520px * var(--k)); height:calc(52px * var(--k)); width:calc(3px * var(--k)); }
   .tela { position:relative; width:100%; height:100%; border-radius:34px; overflow:hidden; background:var(--chat); isolation:isolate; color:var(--grafite); text-align:left; }
   .ilha { position:absolute; top:8px; left:50%; transform:translateX(-50%); width:76px; height:21px; background:#0f1412; border-radius:20px; z-index:9; }
   .status { height:34px; display:flex; align-items:center; justify-content:space-between; padding:6px 22px 0 26px; font:700 12px/1 "Inter Tight", sans-serif; color:var(--cupom); background:var(--verde); }
@@ -185,7 +193,7 @@
   .parado .palco canvas, .parado .palco .estatico, .parado .fone-area { display:none; }
   .parado .tres { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 16px 12px; }
   .tres figure { flex:none; scroll-snap-align:center; display:grid; justify-items:center; gap:10px; }
-  .tres .fone { --fw:200px; width:200px; height:410px; transform:none; cursor:default; }
+  .tres .fone { --k:.48; transform:none; }
   .tres .bolha img { height:84px; } .tres .loja .foto { height:140px; }
   .tres .ilha { width:58px; height:18px; } .tres .status { padding:6px 16px 0 18px; font-size:11px; }
   .tres figcaption { font:700 14px/1.3 "Inter Tight", sans-serif; color:var(--cupom); text-align:center; max-width:200px; }
@@ -345,6 +353,7 @@
     .palco { height:700px; margin:0; }
     .palco { height:770px; margin:0 -40px 0 0; }
     .fone-area { top:40px; }
+    .fone-area .fone { --k:.68; }
     .estatico .cupom-fixo { width:200px; height:230px; top:20px; transform:translateX(10%) rotate(9deg); }
     .estatico .prod { width:110px; } .estatico .prod img { height:110px; }
     .estatico .p1 { left:10px; top:110px; } .estatico .p2 { left:auto; right:10px; top:230px; } .estatico .p3 { right:auto; left:0; top:400px; } .estatico .p4 { right:16px; top:500px; }
@@ -403,12 +412,10 @@
             <div class="p-loja" aria-hidden="true"><img src="img/home/print-ml-darrow.webp" width="456" height="989" alt="" decoding="async"></div>
             <div class="dedo" aria-hidden="true"></div>
           </div>
-          <div class="pausa">pausado: toque para continuar</div>
+          <i class="bl e a"></i><i class="bl e v1"></i><i class="bl e v2"></i><i class="bl d l"></i><i class="bl d cc"></i>
         </div>
         <ol class="passos" aria-hidden="true"><li data-p="1">Chega a oferta conferida</li><li data-p="2">Você toca no link</li><li data-p="3">Abre direto no app da loja</li></ol>
         <p class="legenda-caso" aria-hidden="true"></p>
-        <button class="ctrl" type="button" aria-pressed="false">Pausar animação</button>
-        <p class="nota-fone">Prints reais do celular, tirados em 18/11.</p>
       </div>
       <div class="tres" aria-label="Como funciona, em três passos"></div>
     </div>
@@ -518,7 +525,7 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
   /* ---------- celular: prints reais do grupo e dos apps ---------- */
   var palco = $('.palco'), fone = $('.fone'), tela = $('.tela-print'), grupo = $('.p-grupo'), loja = $('.p-loja'), lojaImg = $('.p-loja img');
   var dedo = $('.dedo'), realce = $('.realce'), legenda = $('.legenda-caso');
-  var passos = document.querySelectorAll('.passos li'), ctrl = $('.ctrl');
+  var passos = document.querySelectorAll('.passos li');
   var D0 = D.celular[0];  /* Darrow: saiu no grupo em D0.dia às D0.hora */
   var LEG_A = 'No grupo saiu a ' + brl(D0.preco) + ' em ' + D0.dia + ', às ' + D0.hora + '. Em 18/11, no app, estava R$ 72,74. Quem estava no grupo pegou.';
   var P1 = D.vitrine.filter(function (o) { return o.id === '22697508075'; })[0] || { preco: 76.9, dia: '17/11', hora: '21h07' };
@@ -539,7 +546,8 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
   function abrirLoja(src) { lojaImg.src = src; rolar(lojaImg, 0, 0); loja.classList.add('aberta'); }
 
   /* cada volta: grupo (passo 1), toque no link (passo 2), app da loja (passo 3); a próxima volta fecha o app e mostra a próxima oferta */
-  var VOLTA = 7300;
+  /* 21/11: o print tem a proporção da tela do iPhone 16, então não rola; o dedo aparece no link (sem viajar pela tela) */
+  var VOLTA = 6200;
   var EV_VOLTA = [
     [0, function () {
       grupo.src = V.grupo; rolar(grupo, 0, 0);
@@ -547,15 +555,13 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
       dedo.style.left = '82%'; dedo.style.top = '104%';
       legenda.textContent = V.leg; marcaPasso(1);
     }],
-    [700, function () { rolar(grupo, sobra(grupo), 1400); }],
-    [2400, function () { var c = noLink(V.link.x, V.link.y); dedo.style.left = c.x + 'px'; dedo.style.top = c.y + 'px'; dedo.classList.add('on'); marcaPasso(2); }],
-    [3200, function () {
+    [1700, function () { var c = noLink(V.link.x, V.link.y); dedo.style.transition = 'opacity .25s'; dedo.style.left = c.x + 'px'; dedo.style.top = c.y + 'px'; dedo.classList.add('on'); marcaPasso(2); }],
+    [2200, function () {
       var a = noLink(V.link.x0, V.link.y0), b = noLink(V.link.x1, V.link.y1);
       realce.style.left = a.x + 'px'; realce.style.top = a.y + 'px'; realce.style.width = (b.x - a.x) + 'px'; realce.style.height = (b.y - a.y) + 'px';
       realce.classList.add('on'); dedo.classList.remove('toca'); void dedo.offsetWidth; dedo.classList.add('toca');
     }],
-    [3700, function () { abrirLoja(V.loja); dedo.classList.remove('on'); marcaPasso(3); }],
-    [4500, function () { rolar(lojaImg, sobra(lojaImg), 1800); }]
+    [2800, function () { abrirLoja(V.loja); dedo.classList.remove('on'); marcaPasso(3); }]
   ];
   var EV = [];
   VOLTAS.forEach(function (v, k) { EV_VOLTA.forEach(function (e) { EV.push([k * VOLTA + e[0], function () { V = v; e[1](); }]); }); });
@@ -569,7 +575,7 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
     } else {
       h += '<img class="p-grupo" src="img/home/print-ml-darrow.webp" alt="">';
     }
-    return h + '</div></div>';
+    return h + '</div><i class="bl e a"></i><i class="bl e v1"></i><i class="bl e v2"></i><i class="bl d l"></i><i class="bl d cc"></i></div>';
   }
 
   if (menos) {
@@ -582,11 +588,6 @@ window.SEC_DADOS = {"gerado_em":"18/11/2026 07:29","vitrine":[{"loja":"Shopee","
     ['print-ml-darrow', 'print-grupo-painel', 'print-shopee-painel'].forEach(function (n) { var im = new Image(); im.src = 'img/home/' + n + '.webp'; });
     var vt = 0, ultimo = null, pausado = false, visivel = true, cicloAtual = -1, feitos = {};
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visivel = e[0].isIntersecting; }, { threshold: 0.15 }).observe(fone);
-    var alternar = function () {
-      pausado = !pausado; fone.classList.toggle('pausado', pausado);
-      ctrl.setAttribute('aria-pressed', pausado ? 'true' : 'false'); ctrl.textContent = pausado ? 'Continuar animação' : 'Pausar animação';
-    };
-    fone.addEventListener('click', alternar); ctrl.addEventListener('click', alternar);
     var passo = function (agora) {
       var dt = ultimo == null ? 0 : Math.min(100, agora - ultimo); ultimo = agora;
       if (!pausado && visivel && !document.hidden) vt += dt;
